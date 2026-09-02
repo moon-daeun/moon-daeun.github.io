@@ -8,14 +8,13 @@
 
   <style>
     :root {
-      --bg: #f7f7f5;
-      --surface: #ffffff;
-      --text: #1f2523;
-      --muted: #68706d;
-      --line: #d9ddda;
-      --accent: #27483f;
-      --accent-soft: #e9efec;
-      --max: 1060px;
+      --bg: #f6f6f5;
+      --paper: #ffffff;
+      --text: #202020;
+      --muted: #707070;
+      --line: #ddddda;
+      --accent: #3f3f3f;
+      --max: 1080px;
     }
 
     * { box-sizing: border-box; }
@@ -26,27 +25,32 @@
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65;
+      font-family: "Helvetica Neue", Arial, sans-serif;
       font-size: 16px;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     a {
-      color: var(--accent);
+      color: inherit;
       text-decoration: none;
+      border-bottom: 1px solid rgba(63, 63, 63, .28);
     }
 
-    a:hover { text-decoration: underline; }
+    a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
 
     .wrap {
-      width: min(calc(100% - 40px), var(--max));
+      width: min(calc(100% - 48px), var(--max));
       margin: 0 auto;
     }
 
     header {
-      padding: 26px 0 18px;
+      background: rgba(246, 246, 245, .96);
       border-bottom: 1px solid var(--line);
-      background: rgba(247,247,245,.96);
       position: sticky;
       top: 0;
       z-index: 10;
@@ -54,212 +58,246 @@
     }
 
     .nav {
+      min-height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 28px;
     }
 
     .brand {
-      font-weight: 700;
-      letter-spacing: .01em;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
       color: var(--text);
+      border-bottom: 0;
     }
 
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
-      font-size: 14px;
+      gap: 22px;
+      font-size: 13px;
+      letter-spacing: .03em;
     }
 
-    nav a { color: var(--muted); }
-    nav a:hover { color: var(--text); text-decoration: none; }
+    nav a {
+      color: var(--muted);
+      border-bottom: 0;
+    }
+
+    nav a:hover { color: var(--text); }
 
     .hero {
-      padding: 88px 0 68px;
+      min-height: 72vh;
+      padding: 96px 0 88px;
       display: grid;
-      grid-template-columns: 1.5fr .9fr;
-      gap: 64px;
-      align-items: start;
+      grid-template-columns: minmax(0, 1.7fr) minmax(270px, .7fr);
+      gap: 76px;
+      align-items: end;
     }
 
     .eyebrow {
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: .12em;
+      margin-bottom: 22px;
       color: var(--accent);
+      font-size: 12px;
       font-weight: 700;
-      margin-bottom: 18px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1, h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      letter-spacing: -.02em;
     }
 
     h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 7vw, 72px);
-      line-height: 1.02;
-      margin: 0 0 18px;
-      font-weight: 500;
-      letter-spacing: -.025em;
+      margin: 0 0 22px;
+      font-size: clamp(48px, 7vw, 78px);
+      line-height: .98;
     }
 
     .role {
-      font-size: 19px;
+      max-width: 760px;
+      margin: 0 0 30px;
       color: var(--muted);
-      max-width: 720px;
-      margin: 0 0 26px;
+      font-size: 18px;
+      line-height: 1.55;
     }
 
     .intro {
-      font-size: 18px;
       max-width: 760px;
       margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(20px, 2.3vw, 27px);
+      line-height: 1.48;
+      letter-spacing: -.01em;
     }
 
     .contact-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 24px;
+      padding: 0 0 4px 28px;
+      border-left: 1px solid var(--line);
+      background: transparent;
     }
 
     .contact-card strong {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
     }
 
     .contact-row {
       padding: 8px 0;
-      border-top: 1px solid #ecefed;
-      font-size: 15px;
+      border: 0;
+      font-size: 14px;
+      line-height: 1.55;
     }
 
-    .contact-row:first-of-type { border-top: 0; }
-
     section {
-      padding: 58px 0;
+      padding: 68px 0;
       border-top: 1px solid var(--line);
     }
 
     .section-grid {
       display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 48px;
+      grid-template-columns: 220px 1fr;
+      gap: 56px;
       align-items: start;
     }
 
     h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 31px;
-      line-height: 1.2;
-      font-weight: 500;
       margin: 0;
+      font-size: 30px;
+      line-height: 1.15;
     }
 
     h3 {
-      margin: 0 0 5px;
+      margin: 0 0 6px;
       font-size: 18px;
-      line-height: 1.35;
+      font-weight: 600;
+      line-height: 1.42;
     }
 
     .muted { color: var(--muted); }
 
+    .research-lines {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px 48px;
+    }
+
+    .research-group .label {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .research-group p {
+      margin: 0 0 10px;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
     .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
+      display: block;
+      margin: 0;
     }
 
     .tag {
-      background: var(--accent-soft);
-      border: 1px solid #d6e0db;
-      padding: 8px 11px;
-      border-radius: 999px;
-      font-size: 14px;
+      display: block;
+      background: transparent;
+      border: 0;
+      padding: 0;
+      margin: 0 0 9px;
+      border-radius: 0;
+      font-size: 15px;
+      line-height: 1.55;
     }
 
     .entry {
-      padding: 0 0 28px;
-      margin-bottom: 28px;
-      border-bottom: 1px solid #e4e7e5;
+      margin: 0 0 30px;
+      padding: 0 0 30px;
+      border-bottom: 1px solid #dfdbd3;
     }
 
     .entry:last-child {
-      border-bottom: 0;
-      padding-bottom: 0;
       margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
     }
 
     .meta {
-      color: var(--muted);
-      font-size: 14px;
       margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: .01em;
     }
 
     .status {
-      display: inline-block;
+      display: inline;
+      margin-left: 6px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--accent);
       font-size: 12px;
       font-weight: 700;
       letter-spacing: .04em;
       text-transform: uppercase;
-      color: var(--accent);
-      background: var(--accent-soft);
-      border-radius: 999px;
-      padding: 4px 8px;
-      margin-left: 7px;
-      vertical-align: 1px;
     }
 
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 34px;
     }
 
     .panel {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 22px;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
     }
 
-    .panel h3 { margin-bottom: 10px; }
-
-    .compact-list {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .compact-list li { margin-bottom: 9px; }
+    .panel h3 { margin-bottom: 8px; }
 
     .date {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
       white-space: nowrap;
     }
 
     .timeline-row {
       display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 22px;
-      margin-bottom: 24px;
+      grid-template-columns: 130px 1fr;
+      gap: 24px;
+      margin-bottom: 26px;
     }
 
     .timeline-row:last-child { margin-bottom: 0; }
 
     footer {
-      padding: 34px 0 48px;
-      color: var(--muted);
-      font-size: 14px;
+      padding: 34px 0 50px;
       border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
     }
 
     @media (max-width: 760px) {
       header { position: static; }
-      .nav { align-items: flex-start; flex-direction: column; gap: 10px; }
-      nav { gap: 12px 16px; }
-      .hero { grid-template-columns: 1fr; gap: 34px; padding: 58px 0 48px; }
-      .section-grid { grid-template-columns: 1fr; gap: 24px; }
+      .nav { align-items: flex-start; flex-direction: column; padding: 18px 0; gap: 12px; }
+      nav { gap: 12px 18px; }
+      .hero { min-height: auto; grid-template-columns: 1fr; gap: 44px; padding: 64px 0 56px; }
+      .contact-card { padding: 22px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+      .section-grid { grid-template-columns: 1fr; gap: 28px; }
+      .research-lines { grid-template-columns: 1fr; gap: 26px; }
       .two-col { grid-template-columns: 1fr; }
       .timeline-row { grid-template-columns: 1fr; gap: 3px; }
     }
@@ -277,7 +315,6 @@
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
-        <a href="CV_DaeunMoon.pdf" target="_blank" rel="noopener">CV</a>
       </nav>
     </div>
   </header>
@@ -292,9 +329,9 @@
           Visiting Researcher at Lund University.
         </p>
         <p class="intro">
-          I study how AI innovation is shaped by infrastructure, institutions, and knowledge-production structures.
-          My current work focuses on AI infrastructure and technology policy, socio-technical transitions,
-          innovation systems, and national knowledge-production patterns.
+          I study the infrastructures and institutions that make AI innovation possible,
+          with particular attention to public compute, energy systems, and the organization
+          of knowledge production.
         </p>
       </div>
 
@@ -312,10 +349,7 @@
           <a href="mailto:mundaeun@snu.ac.kr">mundaeun@snu.ac.kr</a>
         </div>
         <div class="contact-row">
-          <a href="https://www.linkedin.com/in/daeun-moon" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-        <div class="contact-row">
-          <a href="CV_DaeunMoon.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+          <a href="https://www.linkedin.com/in/moon-daeun" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </aside>
     </div>
@@ -323,28 +357,19 @@
     <section id="research">
       <div class="wrap section-grid">
         <h2>Research</h2>
-        <div>
-          <p>
-            My research sits at the intersection of science, technology and innovation policy,
-            socio-technical systems, and computational social science. I combine large-scale
-            publication and patent data with comparative policy analysis to examine how technological
-            capabilities develop and how infrastructure and institutional conditions shape innovation.
-          </p>
-
-          <div class="tags" aria-label="Research topics">
-            <span class="tag">AI infrastructure and technology policy</span>
-            <span class="tag">Science, technology and innovation policy</span>
-            <span class="tag">Socio-technical systems and transitions</span>
-            <span class="tag">Innovation systems and knowledge production</span>
-            <span class="tag">Economic complexity</span>
+        <div class="research-lines">
+          <div class="research-group">
+            <span class="label">Current themes</span>
+            <p>AI infrastructure and technology policy</p>
+            <p>Science, technology and innovation policy</p>
+            <p>Socio-technical systems and knowledge production</p>
           </div>
 
-          <div class="tags" aria-label="Methods">
-            <span class="tag">Patent and bibliometric analysis</span>
-            <span class="tag">Complex network analysis</span>
-            <span class="tag">Econometric analysis</span>
-            <span class="tag">NLP and text analysis</span>
-            <span class="tag">Comparative case study and policy analysis</span>
+          <div class="research-group">
+            <span class="label">Methods</span>
+            <p>Patent, bibliometric, and complex network analysis</p>
+            <p>Econometric analysis, machine learning, and natural language processing</p>
+            <p>Comparative case study and policy analysis</p>
           </div>
         </div>
       </div>
@@ -361,7 +386,7 @@
               <em>Technological Forecasting and Social Change</em>
               <span class="status">Revise &amp; Resubmit</span>
             </p>
-            <p>Revised manuscript submitted.</p>
+            <p>Revise and resubmit; revised manuscript submitted August 2026.</p>
           </article>
 
           <article class="entry">
@@ -428,15 +453,27 @@
 
     <section id="funding">
       <div class="wrap section-grid">
-        <h2>Funding &amp; Awards</h2>
-        <div class="two-col">
-          <div class="panel">
+        <h2>Research Funding &amp; Awards</h2>
+        <div>
+          <article class="entry">
             <div class="meta">2026</div>
-            <h3>STINT-SKERIC Long-term Mobility Grant</h3>
-            <p>SEK 170,000 · Sweden Korea Education, Research and Innovation Collaboration (SKERIC)</p>
-          </div>
+            <h3>STINT-SKERIC Long-term Mobility Grant <span class="muted">(SEK 170,000)</span></h3>
+            <p>
+              The Swedish Foundation for International Cooperation in Research and Higher Education (STINT)<br />
+              Sweden Korea Education, Research and Innovation Collaboration (SKERIC)
+            </p>
+          </article>
 
-          <div class="panel">
+          <article class="entry">
+            <div class="meta">2025</div>
+            <h3>BK21 International Joint Research Project</h3>
+            <p>
+              University of Central Florida, USA<br />
+              <em>From Tourism to Space: Smart Regional Transition Strategies in Central Florida</em>
+            </p>
+          </article>
+
+          <article class="entry">
             <div class="meta">2024</div>
             <h3>Grand Prize, 13th KNDA Academic Paper Award</h3>
             <p>
@@ -448,19 +485,18 @@
                 Award information
               </a>
             </p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
-
-    <section id="experience">
+<section id="experience">
       <div class="wrap section-grid">
         <h2>Research Experience</h2>
         <div>
           <div class="timeline-row">
             <div class="date">2025–Present</div>
             <div>
-              <h3>Selected Researcher, SKERIC</h3>
+              <h3>Researcher, SKERIC</h3>
               <p class="muted">Dynamic, Secure and Sustainable Society team</p>
             </div>
           </div>
@@ -501,12 +537,14 @@
             <h3>PhD in Technology Management, Economics and Policy</h3>
             <p>
               Seoul National University, South Korea<br />
-              Integrated Major of Smart City Global Convergence
+              <em>Integrated Major of Smart City Global Convergence</em><br />
+              <strong>Dissertation:</strong> <em>Governing the Infrastructure of AI Innovation: Public Compute, Energy Systems, and Knowledge Production in Europe</em><br />
+              <strong>Supervisor:</strong> Prof. Junseok Hwang
             </p>
           </article>
 
           <article class="entry">
-            <div class="meta">May 2026–October 2026</div>
+            <div class="meta">May–Oct 2026</div>
             <h3>Visiting Researcher</h3>
             <p>
               Lund University, Sweden<br />
@@ -520,7 +558,7 @@
             <h3>MS in Technology Management, Economics and Policy</h3>
             <p>
               Seoul National University, South Korea<br />
-              Integrated Major of Smart City Global Convergence
+              <em>Integrated Major of Smart City Global Convergence</em>
             </p>
           </article>
 
