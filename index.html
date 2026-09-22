@@ -205,22 +205,6 @@
       line-height: 1.55;
     }
 
-    .tags {
-      display: block;
-      margin: 0;
-    }
-
-    .tag {
-      display: block;
-      background: transparent;
-      border: 0;
-      padding: 0;
-      margin: 0 0 9px;
-      border-radius: 0;
-      font-size: 15px;
-      line-height: 1.55;
-    }
-
     .entry {
       margin: 0 0 30px;
       padding: 0 0 30px;
@@ -253,21 +237,6 @@
       text-transform: uppercase;
     }
 
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 34px;
-    }
-
-    .panel {
-      padding: 0;
-      background: transparent;
-      border: 0;
-      border-radius: 0;
-    }
-
-    .panel h3 { margin-bottom: 8px; }
-
     .date {
       color: var(--muted);
       font-size: 13px;
@@ -298,7 +267,6 @@
       .contact-card { padding: 22px 0 0; border-left: 0; border-top: 1px solid var(--line); }
       .section-grid { grid-template-columns: 1fr; gap: 28px; }
       .research-lines { grid-template-columns: 1fr; gap: 26px; }
-      .two-col { grid-template-columns: 1fr; }
       .timeline-row { grid-template-columns: 1fr; gap: 3px; }
     }
   </style>
@@ -310,8 +278,8 @@
       <a class="brand" href="#top">Daeun Moon</a>
       <nav aria-label="Main navigation">
         <a href="#research">Research</a>
+        <a href="#working-papers">Working Papers</a>
         <a href="#education">Education</a>
-        <a href="#manuscripts">Manuscripts</a>
         <a href="#funding">Funding &amp; Awards</a>
         <a href="#experience">Experience</a>
         <a href="#presentations">Presentations</a>
@@ -358,23 +326,7 @@
       </aside>
     </div>
 
-    
-
-    
-
-    
-
-    
-
-    
-
-
-    
-
-    
-
-
-<section id="research">
+    <section id="research">
       <div class="wrap section-grid">
         <h2>Research</h2>
         <div class="research-lines">
@@ -395,7 +347,50 @@
       </div>
     </section>
 
-<section id="education">
+    <section id="working-papers">
+      <div class="wrap section-grid">
+        <h2>Working Papers</h2>
+        <div>
+          <article class="entry">
+            <div class="meta"><strong>Moon, D.</strong>, Lim, S., Hwang, J., &amp; Hwang, Y.*</div>
+            <h3>Scientific and Technological Layers of National AI Knowledge Production: Cross-Country Patterns and Sequences</h3>
+            <p class="muted">
+              <em>Technological Forecasting and Social Change</em>
+              <span class="status">Revise &amp; Resubmit</span>
+            </p>
+            <p>Revise and resubmit; revised manuscript submitted August 2026.</p>
+          </article>
+
+          <article class="entry">
+            <div class="meta"><strong>Moon, D.</strong>, Hwang, Y., Hwang, J., &amp; Jeong, D.</div>
+            <h3>
+              <a href="https://arxiv.org/abs/2609.17200" target="_blank" rel="noopener">
+                Mapping AI Economic Complexity
+              </a>
+            </h3>
+            <p class="muted">
+              <em>arXiv:2609.17200 [physics.soc-ph]</em>
+              <span class="status">Preprint</span>
+            </p>
+            <p>
+              2026 ·
+              <a href="https://doi.org/10.48550/arXiv.2609.17200" target="_blank" rel="noopener">DOI</a>
+            </p>
+          </article>
+
+          <article class="entry">
+            <div class="meta"><strong>Moon, D.</strong>, Hwang, J., &amp; Lim, S.</div>
+            <h3>Analyzing AI Educational Technology Acceptance in Developing Countries: A Study of University Professors in Lombok</h3>
+            <p class="muted">
+              <em>International Journal of Educational Technology in Higher Education</em>
+              <span class="status">Under Review</span>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
       <div class="wrap section-grid">
         <h2>Education</h2>
         <div>
@@ -428,33 +423,7 @@
       </div>
     </section>
 
-<section id="manuscripts">
-      <div class="wrap section-grid">
-        <h2>Manuscripts</h2>
-        <div>
-          <article class="entry">
-            <div class="meta">Moon, D., Lim, S., Hwang, J., &amp; Hwang, Y.</div>
-            <h3>Scientific and Technological Layers of National AI Knowledge Production: Cross-Country Patterns and Sequences</h3>
-            <p class="muted">
-              <em>Technological Forecasting and Social Change</em>
-              <span class="status">Revise &amp; Resubmit</span>
-            </p>
-            <p>Revise and resubmit; revised manuscript submitted August 2026.</p>
-          </article>
-
-          <article class="entry">
-            <div class="meta">Moon, D., Hwang, J., &amp; Lim, S.</div>
-            <h3>Analyzing AI Educational Technology Acceptance in Developing Countries: A Study of University Professors in Lombok</h3>
-            <p class="muted">
-              <em>International Journal of Educational Technology in Higher Education</em>
-              <span class="status">Under Review</span>
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-<section id="outputs">
+    <section id="outputs">
       <div class="wrap section-grid">
         <h2>Policy &amp; Research Reports</h2>
         <div>
@@ -472,7 +441,7 @@
       </div>
     </section>
 
-<section id="funding">
+    <section id="funding">
       <div class="wrap section-grid">
         <h2>Research Funding &amp; Awards</h2>
         <div>
@@ -511,7 +480,7 @@
       </div>
     </section>
 
-<section id="experience">
+    <section id="experience">
       <div class="wrap section-grid">
         <h2>Research Experience</h2>
         <div>
@@ -525,6 +494,7 @@
               </p>
             </div>
           </div>
+
           <div class="timeline-row">
             <div class="date">2025–Present</div>
             <div>
@@ -560,7 +530,7 @@
       </div>
     </section>
 
-<section id="presentations">
+    <section id="presentations">
       <div class="wrap section-grid">
         <h2>Selected Conference Presentations</h2>
         <div>
@@ -592,7 +562,7 @@
       </div>
     </section>
 
-<section id="background">
+    <section id="background">
       <div class="wrap section-grid">
         <h2>Professional Background</h2>
         <div>
